@@ -30,7 +30,6 @@ function App() {
 
   function handleTempIpAddressChange(e: ChangeEvent<HTMLInputElement>) {
     setTempIpAddress(e.currentTarget.value);
-    console.log(tempIpAddress);
   }
 
   useEffect(() => {
@@ -121,7 +120,6 @@ function App() {
     const deviceInformationResponse = await safe(
       camera.deviceInformation.get(deviceInformationVersion)
     );
-    console.log(deviceInformationResponse);
     if (!deviceInformationResponse.success) {
       setMakingRequest(false);
       toast.error("failed to get device information");
