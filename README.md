@@ -4,7 +4,9 @@ This simple React app shows how to use `canonjs`.
 
 ## Prepare Camera
 
-Enable CORS on your camera
+This has to be done so the web app can make requests to the camera.
+
+**Enable CORS**
 
 - `curl --location --request PUT 'http://<camera_ip_address>/ccapi/ver100/functions/cors/corssetting' \
 --header 'Content-Type: application/json' \
@@ -12,9 +14,9 @@ Enable CORS on your camera
     "value": "enable"
 }'`
 
-Set origin to `*`
+**Set origin to `*`**
 
-- `curl --location --request PUT 'http://192.168.167.193/ccapi/ver100/functions/cors/origin' \
+- `curl --location --request PUT 'http://<camera_ip_address>/ccapi/ver100/functions/cors/origin' \
 --header 'Content-Type: application/json' \
 --data '{
     "origin": "*"
